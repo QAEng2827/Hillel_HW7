@@ -3,9 +3,9 @@ package lambda;
 public class Person {
 
     String personName;
-    int personAge;
+    Integer personAge;
 
-    public Person(String personName, int personAge) {
+    public Person(String personName, Integer personAge) {
         this.personName = personName;
         this.personAge = personAge;
     }

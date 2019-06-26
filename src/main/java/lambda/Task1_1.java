@@ -14,15 +14,27 @@ import java.util.*;
 public class Task1_1 {
 
 
-    // static Person[] arrayPersons = new Person[7];
-
     public static void main(String[] args) {
-        List<Person> persons = new ArrayList<Person>();
-        persons.add(new Person("Dean", 41));
-        persons.add(new Person("Sam", 37));
-        persons.add(new Person("John", 66));
-        persons.add(new Person("Mary", 64));
-        persons.add(new Person("Bobby", 66));
+
+        Person[] arrayPersons = new Person[5];
+        arrayPersons[0] = new Person("Dean", 41);
+        arrayPersons[1] = new Person("Sam", 37);
+        arrayPersons[2] = new Person("John", 66);
+        arrayPersons[3] = new Person("Mary", 64);
+        arrayPersons[4] = new Person("Bobby", 66);
+        System.out.println("Array before sort:");
+
+       ArrayList<Person> persons = new ArrayList<>(Arrays.asList(arrayPersons));
+        persons.stream()
+             .forEach(person -> System.out.println("Name: "+ person.personName+ "  Age: " + person.personAge));
+
+//        List<Person> persons = new ArrayList<Person>();
+//        persons.add(new Person("Dean", 41));
+//        persons.add(new Person("Sam", 37));
+//        persons.add(new Person("John", 66));
+//        persons.add(new Person("Mary", 64));
+//        persons.add(new Person("Bobby", 66));
+
 
         Comparator<Person> comparatorName = Comparator.comparing(person -> person.getPersonName());
         Comparator<Person> comparatorAge = Comparator.comparing(person -> person.getPersonAge());
@@ -31,11 +43,15 @@ public class Task1_1 {
         // Arrays.sort()
         // Collections.sort();
 
-
-      Collections.sort(persons,comparatorName);
-      Collections.sort(persons,comparatorAge);
-      persons.stream()
-              .forEach(person -> System.out.println("Name: "+ person.personName+ "  Age: " + person.personAge));
+        System.out.println("Sorted array: ");
+        Arrays.sort(arrayPersons, comparatorName);
+        Arrays.sort(arrayPersons, comparatorAge);
+        Arrays.stream(arrayPersons)
+                .forEach(person -> System.out.println("Name: "+ person.personName+ "  Age: " + person.personAge));
+//      Collections.sort(persons,comparatorName);
+//      Collections.sort(persons,comparatorAge);
+//      persons.stream()
+//              .forEach(person -> System.out.println("Name: "+ person.personName+ "  Age: " + person.personAge));
 
     }
 }
