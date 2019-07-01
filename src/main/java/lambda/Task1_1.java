@@ -13,6 +13,29 @@ import java.util.*;
 
 public class Task1_1 {
 
+    public interface Predicate<T> {
+        boolean test(T t);
+    }
+
+    public interface BinaryOperator<T> {
+        T applyB(T t1, T t2);
+    }
+
+    public interface UnaryOperator<T> {
+        T applyU(T t);
+    }
+
+    public interface Function<T, R> {
+        R apply(T t);
+    }
+
+    public interface Consumer<T> {
+        void accept(T t);
+    }
+
+    public interface Supplier<T> {
+        T get();
+    }
 
     public static void main(String[] args) {
 
@@ -24,9 +47,10 @@ public class Task1_1 {
         arrayPersons[4] = new Person("Bobby", 66);
         System.out.println("Array before sort:");
 
-       ArrayList<Person> persons = new ArrayList<>(Arrays.asList(arrayPersons));
+        ArrayList<Person> persons = new ArrayList<>(Arrays.asList(arrayPersons));
         persons.stream()
-             .forEach(person -> System.out.println("Name: "+ person.personName+ "  Age: " + person.personAge));
+                .forEach(person -> System.out.println("Name: " + person.personName + "  Age: " + person.personAge));
+        System.out.println();
 
 //        List<Person> persons = new ArrayList<Person>();
 //        persons.add(new Person("Dean", 41));
@@ -47,11 +71,57 @@ public class Task1_1 {
         Arrays.sort(arrayPersons, comparatorName);
         Arrays.sort(arrayPersons, comparatorAge);
         Arrays.stream(arrayPersons)
-                .forEach(person -> System.out.println("Name: "+ person.personName+ "  Age: " + person.personAge));
+                .forEach(person -> System.out.println("Name: " + person.personName + "  Age: " + person.personAge));
+        System.out.println();
 //      Collections.sort(persons,comparatorName);
 //      Collections.sort(persons,comparatorAge);
 //      persons.stream()
 //              .forEach(person -> System.out.println("Name: "+ person.personName+ "  Age: " + person.personAge));
+
+/*// Implement each of main Java Standard Library functional interfaces (supplier, predicate etc.)
+     using lambda expressions.*/
+
+
+        System.out.println("-----------------Predicate<T>--------------------");
+        Predicate<Integer> isPositive = age -> age < 50;
+        persons.stream()
+                .forEach(person -> System.out.println("Yang generation : " + isPositive.test(person.personAge) +
+                        "Name: " + person.personName + "  Age: " + person.personAge));
+        System.out.println();
+
+        System.out.println("-----------------BinaryOperator<T>--------------------");
+        BinaryOperator<Integer> sumAge = (age1, age2) -> age1 + age2;
+        System.out.printf("The sum of %s and %s ages is %s", arrayPersons[0].getPersonName(),
+                arrayPersons[1].getPersonName(),
+                sumAge.applyB(arrayPersons[0].getPersonAge(), arrayPersons[1].getPersonAge()));
+        System.out.println();
+
+        System.out.println("----------------- UnaryOperator<T>--------------------");
+        UnaryOperator<Integer> realAge = (age) -> age + 40;
+        System.out.printf("Real ages %s are %s", arrayPersons[1].getPersonName(), realAge.applyU(arrayPersons[1].getPersonAge()));
+        System.out.println();
+
+
+        System.out.println("----------------Function<T>--------------------");
+        Function<Integer, String> convert = age -> String.valueOf(age) + " years old";
+        persons.stream()
+                .forEach(person -> System.out.println(person.personName + " is " + convert.apply(person.personAge)));
+        System.out.println();
+
+        System.out.println("---------------- Consumer<T>--------------------");
+        Consumer<String> job= name -> System.out.printf(" Hunter %s \n",  name);
+
+        persons.stream()
+                .forEach(person ->  job.accept(person.personName));
+        System.out.println();
+
+
+        System.out.println("---------------- Supplier<T>--------------------");
+        Supplier<String> lastName=() -> "Winchester";
+
+        persons.stream()
+                .forEach(person ->  System.out.println(person.personName +" "+ lastName.get()+ " is " + person.personAge+ " age" ));
+        System.out.println();
 
     }
 }
