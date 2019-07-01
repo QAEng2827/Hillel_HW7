@@ -11,31 +11,8 @@ e.	Use forEach method for printing information about all the persons. Use the me
 
 import java.util.*;
 
-public class Task1_1 {
+public class Task1_1 implements ImpFunctionalInterfaces {
 
-    public interface Predicate<T> {
-        boolean test(T t);
-    }
-
-    public interface BinaryOperator<T> {
-        T applyB(T t1, T t2);
-    }
-
-    public interface UnaryOperator<T> {
-        T applyU(T t);
-    }
-
-    public interface Function<T, R> {
-        R apply(T t);
-    }
-
-    public interface Consumer<T> {
-        void accept(T t);
-    }
-
-    public interface Supplier<T> {
-        T get();
-    }
 
     public static void main(String[] args) {
 
@@ -122,6 +99,9 @@ public class Task1_1 {
         persons.stream()
                 .forEach(person ->  System.out.println(person.personName +" "+ lastName.get()+ " is " + person.personAge+ " age" ));
         System.out.println();
+
+        /*Create your own functional interface and add several its implementations using both lambda expressions
+         and inner anonymous classes.*/
 
     }
 }
