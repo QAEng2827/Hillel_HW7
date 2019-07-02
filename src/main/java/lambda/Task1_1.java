@@ -11,10 +11,12 @@ e.	Use forEach method for printing information about all the persons. Use the me
 
 import java.util.*;
 
-public class Task1_1 implements ImpFunctionalInterfaces {
+public class Task1_1 extends MyAnonimusClass implements ImpFunctionalInterfaces {
 
 
     public static void main(String[] args) {
+        printTitle.startNewTack();
+
 
         Person[] arrayPersons = new Person[5];
         arrayPersons[0] = new Person("Dean", 41);
@@ -57,7 +59,7 @@ public class Task1_1 implements ImpFunctionalInterfaces {
 
 /*// Implement each of main Java Standard Library functional interfaces (supplier, predicate etc.)
      using lambda expressions.*/
-
+        printEnd.startNewTack();
 
         System.out.println("-----------------Predicate<T>--------------------");
         Predicate<Integer> isPositive = age -> age < 50;
@@ -102,6 +104,6 @@ public class Task1_1 implements ImpFunctionalInterfaces {
 
         /*Create your own functional interface and add several its implementations using both lambda expressions
          and inner anonymous classes.*/
-
+        print.startNewTack();
     }
 }
