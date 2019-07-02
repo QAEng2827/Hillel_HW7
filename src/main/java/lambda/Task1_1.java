@@ -15,6 +15,9 @@ public class Task1_1 extends MyAnonimusClass implements ImpFunctionalInterfaces 
 
 
     public static void main(String[] args) {
+
+        System.out.printf("Task %s \n", numberTask.numberTask(1));
+
         printTitle.startNewTack();
 
 
@@ -57,9 +60,14 @@ public class Task1_1 extends MyAnonimusClass implements ImpFunctionalInterfaces 
 //      persons.stream()
 //              .forEach(person -> System.out.println("Name: "+ person.personName+ "  Age: " + person.personAge));
 
+        printEnd.startNewTack();
+
 /*// Implement each of main Java Standard Library functional interfaces (supplier, predicate etc.)
      using lambda expressions.*/
-        printEnd.startNewTack();
+
+
+        printTitle.startNewTack();
+        System.out.printf("Task %s \n", numberTask.numberTask(2));
 
         System.out.println("-----------------Predicate<T>--------------------");
         Predicate<Integer> isPositive = age -> age < 50;
@@ -88,22 +96,26 @@ public class Task1_1 extends MyAnonimusClass implements ImpFunctionalInterfaces 
         System.out.println();
 
         System.out.println("---------------- Consumer<T>--------------------");
-        Consumer<String> job= name -> System.out.printf(" Hunter %s \n",  name);
+        Consumer<String> job = name -> System.out.printf(" Hunter %s \n", name);
 
         persons.stream()
-                .forEach(person ->  job.accept(person.personName));
+                .forEach(person -> job.accept(person.personName));
         System.out.println();
 
 
         System.out.println("---------------- Supplier<T>--------------------");
-        Supplier<String> lastName=() -> "Winchester";
+        Supplier<String> lastName = () -> "Winchester";
 
         persons.stream()
-                .forEach(person ->  System.out.println(person.personName +" "+ lastName.get()+ " is " + person.personAge+ " age" ));
+                .forEach(person -> System.out.println(person.personName + " " + lastName.get() + " is " + person.personAge + " age"));
         System.out.println();
 
         /*Create your own functional interface and add several its implementations using both lambda expressions
          and inner anonymous classes.*/
         print.startNewTack();
+
+
+        System.out.printf("Task %s \n", numberTask.numberTask(4));
+
     }
 }
