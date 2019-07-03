@@ -11,7 +11,7 @@ e.	Use forEach method for printing information about all the persons. Use the me
 
 import java.util.*;
 
-public class LambdaTask extends MyAnonimusClass implements ImpFunctionalInterfaces, MyDefaultMetod {
+public class LambdaTask extends MyAnonimusClass implements ImpFunctionalInterfaces, MyDefaultMetod, MyStaticMethod {
 
 
     public static void main(String[] args) {
@@ -118,11 +118,11 @@ public class LambdaTask extends MyAnonimusClass implements ImpFunctionalInterfac
 
 
         printEnd.startNewTack();
-    /*Add few default methods to it and use them.*/
+        /*Add few default methods to it and use them.*/
         printTitle.startNewTack();
         System.out.printf("Task %s \n", numberTask.numberTask(4));
 
-        LambdaTask lambdaTask=new LambdaTask();
+        LambdaTask lambdaTask = new LambdaTask();
         lambdaTask.dm_1();
         System.out.println();
         lambdaTask.dm_2();
@@ -132,9 +132,8 @@ public class LambdaTask extends MyAnonimusClass implements ImpFunctionalInterfac
         /* Add few static methods to it and use them. */
         printTitle.startNewTack();
         System.out.printf("Task %s \n", numberTask.numberTask(5));
-
-
-
+        MyStaticMethod.hunter();
+        MyStaticMethod.hunts();
         printEnd.startNewTack();
 
     }
