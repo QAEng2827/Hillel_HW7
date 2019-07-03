@@ -6,13 +6,13 @@ public class MyAnonimusClass{
         @Override
         public void startNewTack() {
 
-            System.out.println("TASK IS STARTED");
+            System.out.println("\n TASK IS STARTED");
                     }
     };
     static MyFunctionalInterface printEnd = new MyFunctionalInterface() {
         @Override
         public void startNewTack() {
-            System.out.println("TASK IS FINISHED");
+            System.out.println("TASK IS FINISHED \n");
         }
     };
     static MyFunctionalInterface print = new MyFunctionalInterface() {

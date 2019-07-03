@@ -2,6 +2,6 @@ package lambda;
 
 
 public interface MyFunctionalInterface{
-public void startNewTack();
+ void startNewTack();
 
 }

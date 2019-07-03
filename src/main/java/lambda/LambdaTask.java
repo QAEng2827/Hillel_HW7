@@ -11,7 +11,7 @@ e.	Use forEach method for printing information about all the persons. Use the me
 
 import java.util.*;
 
-public class Task1_1 extends MyAnonimusClass implements ImpFunctionalInterfaces {
+public class LambdaTask extends MyAnonimusClass implements ImpFunctionalInterfaces, MyDefaultMetod {
 
 
     public static void main(String[] args) {
@@ -110,12 +110,32 @@ public class Task1_1 extends MyAnonimusClass implements ImpFunctionalInterfaces 
                 .forEach(person -> System.out.println(person.personName + " " + lastName.get() + " is " + person.personAge + " age"));
         System.out.println();
 
+        printEnd.startNewTack();
+        System.out.printf("Task %s \n", numberTask.numberTask(3));
         /*Create your own functional interface and add several its implementations using both lambda expressions
          and inner anonymous classes.*/
         print.startNewTack();
 
 
+        printEnd.startNewTack();
+    /*Add few default methods to it and use them.*/
+        printTitle.startNewTack();
         System.out.printf("Task %s \n", numberTask.numberTask(4));
+
+        LambdaTask lambdaTask=new LambdaTask();
+        lambdaTask.dm_1();
+        System.out.println();
+        lambdaTask.dm_2();
+
+        printEnd.startNewTack();
+
+        /* Add few static methods to it and use them. */
+        printTitle.startNewTack();
+        System.out.printf("Task %s \n", numberTask.numberTask(5));
+
+
+
+        printEnd.startNewTack();
 
     }
 }
