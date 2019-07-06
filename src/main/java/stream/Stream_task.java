@@ -96,13 +96,7 @@ g.	get distinct list of all authors*/
                 .max((book1, book2) -> book1.numberOfPages < book2.numberOfPages ? 1 : -1)
                 .get();
         System.out.println(booksMinPages.numberOfPages);
-//
-//        //filter books with only single author;
-//
-////         //       .map(book1 -> book1.title)
-////                .collect(Collectors.toList());
-//        System.out.println("Books which have more page than 200 is:" + books1List);
-//
+
         System.out.println("\n____sort the books by number of pages + ) Use peek method for debugging" +
                 " intermediate streams during execution the previous task. __________\n");
         booksList.stream()
