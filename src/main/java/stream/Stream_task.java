@@ -136,6 +136,7 @@ g.	get distinct list of all authors*/
                 .collect(Collectors.toList())
                 .forEach(author -> System.out.println(author));
 
+
         System.out.println("__________Use peek method for debugging intermediate streams +  Use parallel stream with subtask #3_____");
         books.stream()
                 .map(book -> book.getNumberOfPages())
